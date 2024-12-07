@@ -142,8 +142,8 @@ if ($err) {
     <nav>
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="get.host.php">Hosts Monitorados</a></li>
-                <li><a href="webpage.php">Adicionar Host</a></li>
+                <li><a href="get.host.php"><i class="material-icons">remove_red_eyes</i></a></li>
+                <li><a href="webpage.php"><i class="material-icons">add_circle_outline</i></a></li>
             </ul>
         </div>
     </nav>
@@ -160,7 +160,6 @@ if (isset($hosts->result) && is_array($hosts->result)) {
   echo "<th>Host ID</th>";
   echo "<th>Name</th>";
   echo "<th>Host</th>";
-  echo "<th>Status</th>";
   echo "<th>Grafana</th>";
   echo "<th>Excluir</th>";
   echo "</tr>";
@@ -173,9 +172,8 @@ if (isset($hosts->result) && is_array($hosts->result)) {
       echo "<td>" . htmlspecialchars($entry->hostid) . "</td>";
       echo "<td>" . htmlspecialchars($entry->name) . "</td>";
       echo "<td>" . htmlspecialchars($entry->host) . "</td>";
-      echo "<td>" . htmlspecialchars($entry->status) . "</td>";
       echo "<td>" . "Grafana Link" . "</td>";
-      echo "<td>  <a href='host.delete.php?idh=" . htmlspecialchars($entry->hostid) . "'>Deletar</a> </td>";
+      echo "<td>  <a href='host.delete.php?idh=" . htmlspecialchars($entry->hostid) . "'>  <i class='material-icons red-text' > delete_forever </i></a> </td>";
       echo "</tr>";
   }
 

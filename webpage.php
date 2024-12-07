@@ -74,8 +74,8 @@
     <nav>
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="get.host.php">Hosts Monitorados</a></li>
-                <li><a href="webpage.php">Adicionar Host</a></li>
+                <li><a href="get.host.php"><i class="material-icons">remove_red_eye</i></a></li>
+                <li><a href="webpage.php"><i class="material-icons">add_circle_outline</i></a></li>
             </ul>
         </div>
     </nav>
