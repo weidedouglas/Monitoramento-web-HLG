@@ -8,6 +8,17 @@ $hostname = filter_input(INPUT_POST,'host',FILTER_SANITIZE_URL);
 $name = filter_input(INPUT_POST,'application_name',FILTER_SANITIZE_SPECIAL_CHARS);
 
 
+// Specify the file path
+$filePath = 'zabbix_token.txt';
+
+// Check if the file exists
+if (!file_exists($filePath)) {
+    die("Error: File does not exist.");
+}
+
+// Read the file content
+$tokenAPI = file_get_contents($filePath);
+
 $curl = curl_init();
 curl_setopt_array($curl, [
   CURLOPT_PORT => "8080",
@@ -18,7 +29,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\n           \"jsonrpc\": \"2.0\",\n           \"method\": \"host.create\",\n           \"params\": {\n\t\t\t\t\t\t\t\t\"host\": \"$hostname\",\n\t\t\t\t\t\t\t\t\"name\": \"$name\",\n\t\t\t\t\t\t \t\t\"groups\" : [\n\t\t\t\t\t\t\t\t\t{\"groupid\" : \"24\"}\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t \t\t\"templates\" : [\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t \"templateid\" : \"10656\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t },\n\t\t\t\t\t \"auth\": \"03c37403326e411b72ca815866fb8180\",\n           \"id\": 1\n }",
+  CURLOPT_POSTFIELDS => "{\n           \"jsonrpc\": \"2.0\",\n           \"method\": \"host.create\",\n           \"params\": {\n\t\t\t\t\t\t\t\t\"host\": \"$hostname\",\n\t\t\t\t\t\t\t\t\"name\": \"$name\",\n\t\t\t\t\t\t \t\t\"groups\" : [\n\t\t\t\t\t\t\t\t\t{\"groupid\" : \"24\"}\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t \t\t\"templates\" : [\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t \"templateid\" : \"10656\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t },\n\t\t\t\t\t \"auth\": \"$tokenAPI\",\n           \"id\": 1\n }",
 CURLOPT_HTTPHEADER => [
     "Content-Type: application/json",
     "User-Agent: insomnia/10.1.1"
