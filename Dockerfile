@@ -10,4 +10,4 @@ RUN git clone -b master https://github.com/weidedouglas/Monitoramento-web-HLG.gi
     git fetch origin && \
     git reset --hard origin/master
 
-RUN wait-for-zabbix.sh
+RUN /usr/share/zabbix/web/wait-for-zabbix.sh
