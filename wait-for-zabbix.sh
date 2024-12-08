@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while ! curl -sf http://localhost/zabbix; do
+while ! curl -sf http://localhost:8080; do
     echo "Waiting for Zabbix to start..."
     sleep 5
 done
