@@ -42,7 +42,7 @@ if (isset($data['result'])) {
     echo "Token retrieved: $token\n";
 
     // Save the token to a file
-    $filePath = 'zabbix_token.txt';
+    $filePath = '/usr/share/zabbix/web/zabbix_token.txt';
     if (file_put_contents($filePath, $token) !== false) {
         echo "Token saved to: $filePath\n";
     } else {
