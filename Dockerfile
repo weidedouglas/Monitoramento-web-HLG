@@ -4,5 +4,5 @@ FROM zabbix/zabbix-web-nginx-mysql:alpine-7.0-latest
 USER "root"
 RUN apk update && apk add --no-cache git php
 RUN git clone -b master https://github.com/weidedouglas/Monitoramento-web-HLG.git /usr/share/zabbix/web
-RUN chmod +x wait-for-zabbix.sh
+RUN /usr/share/zabbix/web && git pull;
 RUN wait-for-zabbix.sh
