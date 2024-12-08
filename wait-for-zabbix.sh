@@ -8,5 +8,5 @@ done
 
 # Comando PHP a ser executado após o Zabbix estar up
 # php /usr/share/zabbix/web/generate_token.php
-php7.4 generate_token.php
+php /usr/share/zabbix/web/generate_token.php
 
