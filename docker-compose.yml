@@ -18,7 +18,8 @@ services:
       - zabbix-network
 
   zabbix-web:
-    image: zabbix/zabbix-web-nginx-mysql:alpine-7.0-latest
+    build: .
+    #image: zabbix/zabbix-web-nginx-mysql:alpine-7.0-latest
     container_name: zabbix-web
     environment:
       ZBX_SERVER_HOST: zabbix-server
@@ -30,13 +31,9 @@ services:
       - "8080:8080"
     depends_on:
       - zabbix-server
+      - mysql
     networks:
       - zabbix-network
-    entrypoint: >
-    sh -c "
-      apk add --no-cache git &&
-      git clone -b master https://github.com/weidedouglas/Monitoramento-web-HLG.git /usr/share/zabbix/web
-      "
 
 
   mysql:

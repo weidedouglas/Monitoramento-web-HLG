@@ -1,5 +1,7 @@
-FROM grafana/grafana:latest
-RUN apk --no-cache add git
-RUN git clone git@github.com:weidedouglas/Monitoramento-web-HLG.git
-RUN cd ./grafana/provisioning && git checkout master
-RUN chown -R grafana:grafana ./grafana/provisioning
+FROM zabbix/zabbix-web-nginx-mysql:alpine-7.0-latest
+
+# Install required packages
+USER "root"
+RUN apk update && apk add --no-cache git php
+RUN git clone -b master https://github.com/weidedouglas/Monitoramento-web-HLG.git /usr/share/zabbix/web
+RUN bash /usr/share/zabbix/web/wait-for-zabbix.sh
