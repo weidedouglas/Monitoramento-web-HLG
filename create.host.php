@@ -35,7 +35,6 @@ CURLOPT_HTTPHEADER => [
     "User-Agent: insomnia/10.1.1"
   ],
 
-
 ]);
 
 $response = curl_exec($curl);
