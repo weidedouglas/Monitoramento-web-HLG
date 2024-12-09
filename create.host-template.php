@@ -95,3 +95,52 @@ if (isset($hostCreateResponse['error'])) {
 
 $hostId = $hostCreateResponse['result']['hostids'][0];
 echo "Host created successfully with ID: $hostId\n";
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        /* Center the preloader on the page */
+        .preloader-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader-container">
+        <h5>Criando o host, aguarde...</h5>
+        <!-- Materialize Preloader -->
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Redirect After 3 Seconds -->
+    <script>
+        setTimeout(() => {
+            window.location.href = "get.host.php"; // Replace with the URL of the target page
+        }, 3000); // 3-second delay
+    </script>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
