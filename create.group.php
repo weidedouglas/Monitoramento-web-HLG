@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 // Specify the file path
-$filePath = 'zabbix_token.txt';
+$filePath = '/usr/share/zabbix/web/zabbix_token.txt';
   
 // Check if the file exists
 if (!file_exists($filePath)) {
