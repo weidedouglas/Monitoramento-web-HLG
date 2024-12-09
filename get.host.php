@@ -1,6 +1,15 @@
 
 <?php
 
+$filePath = '/usr/share/zabbix/web/zabbix_token.txt';
+
+if (!file_exists($filePath)) {
+    die("Error: File does not exist.");
+}
+
+$tokenAPI = file_get_contents($filePath);
+
+
 $curl = curl_init();
 
 curl_setopt_array($curl, [
@@ -12,10 +21,9 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => "{\n           \"jsonrpc\": \"2.0\",\n           \"method\": \"host.get\",\n           \"params\": {\n               \"output\": [\"name\", \"host\", \"status\"]\n           },\n\t\t\t\t\t \"auth\": \"03c37403326e411b72ca815866fb8180\",\n           \"id\": 1\n }",
+  CURLOPT_POSTFIELDS => "{\n           \"jsonrpc\": \"2.0\",\n           \"method\": \"host.get\",\n           \"params\": {\n               \"output\": [\"name\", \"host\", \"status\"]\n           },\n\t\t\t\t\t \"auth\": \"$tokenAPI\",\n           \"id\": 1\n }",
   CURLOPT_HTTPHEADER => [
-    "Content-Type: application/json",
-    "User-Agent: insomnia/10.1.1"
+    "Content-Type: application/json"
   ],
 ]);
 
