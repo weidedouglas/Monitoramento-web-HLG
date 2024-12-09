@@ -1,6 +1,6 @@
 <?php
 
-$filePath = 'zabbix_token.txt';
+$filePath = '/usr/share/zabbix/web/zabbix_token.txt';
 
 if (!file_exists($filePath)) {
     die("Error: File does not exist.");
