@@ -9,4 +9,4 @@ providers:
     editable: true
     updateIntervalSeconds: 10  # Interval to check for updates (optional)
     options:
-      path: '/usr/share/zabbix/web/grafana/provisioning/dashboards/dash.json'
+      path: 'dash.json'
