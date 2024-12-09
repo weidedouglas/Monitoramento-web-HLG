@@ -11,6 +11,7 @@ do
     sleep 5
   elif [ "$result" -eq 1 ]; then
     docker exec zabbix-web php /usr/share/zabbix/web/generate_token.php
+    docker exec zabbix-web php /usr/share/zabbix/web/create.group.php
     break
   fi
 done
