@@ -14,7 +14,7 @@
             <name>Teste web</name>
             <groups>
                 <group>
-                    <name>Linux servers</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <httptests>
