@@ -6,6 +6,6 @@ RUN mkdir -p /usr/share/zabbix/web && \
         cd /usr/share/zabbix/web && \
         git init && \
         git remote add origin https://github.com/weidedouglas/Monitoramento-web-HLG.git && \
-        git pull && \
+        git pull origin mater && \
         git checkout master -f && \
         git branch --set-upstream-to origin/master
