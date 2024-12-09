@@ -55,6 +55,7 @@ services:
     environment:
       - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app
       - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+      - GF_PATHS_CACHE_TTL=30s
     ports:
       - "3000:3000"
     volumes:
