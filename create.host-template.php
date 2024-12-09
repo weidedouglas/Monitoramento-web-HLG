@@ -95,7 +95,7 @@ if (isset($hostCreateResponse['error'])) {
 
 $hostId = $hostCreateResponse['result']['hostids'][0];
 echo "Host created successfully with ID: $hostId\n";
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
