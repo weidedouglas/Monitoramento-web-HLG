@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>7.0</version>
+    <template_groups>
+        <template_group>
+            <uuid>08378cb27f004315af87222705a176e9</uuid>
+            <name>web</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>15b00dcdb9fc408a8baa15032dc87477</uuid>
+            <template>Teste web</template>
+            <name>Teste web</name>
+            <groups>
+                <group>
+                    <name>web</name>
+                </group>
+            </groups>
+            <httptests>
+                <httptest>
+                    <uuid>80b13b6629f5480fb625521de1cf171a</uuid>
+                    <name>Teste Web</name>
+                    <steps>
+                        <step>
+                            <name>Teste web</name>
+                            <url>http://${HOST.HOST}</url>
+                            <status_codes>200</status_codes>
+                        </step>
+                    </steps>
+                </httptest>
+            </httptests>
+        </template>
+    </templates>
+</zabbix_export>
