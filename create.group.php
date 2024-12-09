@@ -1,19 +1,14 @@
 <?php
 
-$curl = curl_init();
+$filePath = 'zabbix_token.txt';
 
-// Specify the file path
-$filePath = '/usr/share/zabbix/web/zabbix_token.txt';
-  
-// Check if the file exists
 if (!file_exists($filePath)) {
     die("Error: File does not exist.");
-}   
-    
-// Read the file content
+}
+
 $tokenAPI = file_get_contents($filePath);
 
-
+$curl = curl_init();
 curl_setopt_array($curl, [
   CURLOPT_PORT => "8080",
   CURLOPT_URL => "http://localhost:8080/api_jsonrpc.php",
