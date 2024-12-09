@@ -58,7 +58,11 @@ $importData = [
             "templates" => [
                 "createMissing" => true,
                 "updateExisting" => true
-            ]
+	    ],
+	    "httptests" => [
+        	"createMissing" => true,
+        	"updateExisting" => true
+    	    ]
         ],
         "source" => $templateXml
     ],
