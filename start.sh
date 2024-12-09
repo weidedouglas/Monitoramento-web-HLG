@@ -12,7 +12,7 @@ do
   elif [ "$result" -eq 1 ]; then
     docker exec zabbix-web php /usr/share/zabbix/web/generate_token.php
     sleep 5
-    docker exec zabbix-web php /usr/share/zabbix/web/create.group.php
+    docker exec zabbix-web php /usr/share/zabbix/web/template-import.php
     break
   fi
 done
