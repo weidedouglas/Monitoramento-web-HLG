@@ -5,7 +5,7 @@ $zabbixUser = 'Admin';
 $zabbixPassword = 'zabbix'; 
 
 // Template file path
-$templateFile = 'template.xml'; 
+$templateFile = '/usr/share/zabbix/web/template.xml'; 
 
 // Function to send API requests
 function zabbixApiRequest($url, $data) {
