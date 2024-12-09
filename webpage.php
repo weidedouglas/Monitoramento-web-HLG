@@ -84,7 +84,7 @@
     <div class="form-container">
         <div class="form-card">
             <h5>Adicionar um Novo Host</h5>
-            <form action="create.host.php" method="POST">
+            <form action="create.host-template.php" method="POST">
                 <div class="input-field">
                     <input id="host" name="host" type="text" class="validate" placeholder="sem HTTP/HTTPS" required>
                     <label for="host">Host a ser monitorado</label>
