@@ -29,7 +29,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\n           \"jsonrpc\": \"2.0\",\n           \"method\": \"host.create\",\n           \"params\": {\n\t\t\t\t\t\t\t\t\"host\": \"$hostname\",\n\t\t\t\t\t\t\t\t\"name\": \"$name\",\n\t\t\t\t\t\t \t\t\"groups\" : [\n\t\t\t\t\t\t\t\t\t{\"groupid\" : \"2\"}\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t \t\t\"templates\" : [\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t \"templateid\" : \"10656\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t },\n\t\t\t\t\t \"auth\": \"$tokenAPI\",\n           \"id\": 1\n }",
+  CURLOPT_POSTFIELDS => "{\n           \"jsonrpc\": \"2.0\",\n           \"method\": \"host.create\",\n           \"params\": {\n\t\t\t\t\t\t\t\t\"host\": \"$hostname\",\n\t\t\t\t\t\t\t\t\"name\": \"$name\",\n\t\t\t\t\t\t \t\t\"groups\" : [\n\t\t\t\t\t\t\t\t\t{\"groupid\" : \"2\"}\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t \t\t\"templates\" : [\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t \"templateid\" : \"10650\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t },\n\t\t\t\t\t \"auth\": \"$tokenAPI\",\n           \"id\": 1\n }",
 CURLOPT_HTTPHEADER => [
     "Content-Type: application/json",
     "User-Agent: insomnia/10.1.1"
