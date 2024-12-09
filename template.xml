@@ -24,7 +24,7 @@
                     <steps>
                         <step>
                             <name>Teste web</name>
-                            <url>http://${HOST.HOST}</url>
+                            <url>http://{HOST.HOST}</url>
                             <status_codes>200</status_codes>
                         </step>
                     </steps>
